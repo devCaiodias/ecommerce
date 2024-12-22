@@ -4,7 +4,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <h1>Pagina principal</h1>
+      <main className={styles.mainhome}>
+        <h1>HOme</h1>
+        <h1>HOme</h1>
+      </main>
     </>
   );
 }
