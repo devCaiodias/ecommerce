@@ -35,7 +35,11 @@
 }
 
 .carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 40px;
+    position: relative;
 }
 
 .carrinholink{
@@ -50,4 +54,20 @@
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+.cart_status {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -3,6 +3,8 @@ import styles from '../styles/MaisVendidos.module.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Star } from 'lucide-react'
+import Link from 'next/link'
+
 
 
 type maisVendidosProps = {
@@ -37,12 +39,13 @@ export default function MaisVendidos() {
     return (
         <div className={styles.productCard}>
           {maisVendidos.map((produto: maisVendidosProps) => {
-            return  <div key={produto.id} className={styles.produtos}>
+            return <Link href={`/produtos/${produto.id}`} key={produto.id} className={styles.link}>  <div key={produto.id} className={styles.produtos}>
             <img src={produto.image} alt={produto.title} width={110} className={styles.imagemproduto} />
             <p className={styles.titleproduct}>{produto.title}</p>
             <p className={styles.price}>${produto.price}</p>
-            <p><Star className={styles.starProduct} /><Star className={styles.starProduct}/><Star className={styles.starProduct}/><Star className={styles.starProduct}/>{produto.rating.rate}</p>
+            <p className={styles.rating}><Star className={styles.starProduct} /><Star className={styles.starProduct}/><Star className={styles.starProduct}/><Star className={styles.starProduct}/>{produto.rating.rate}</p>
           </div>
+          </Link>
           }
           )}
         </div>

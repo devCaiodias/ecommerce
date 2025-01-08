@@ -3,6 +3,7 @@ import styles from '../styles/Novidades.module.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Star } from 'lucide-react'
+import Link from 'next/link'
 
 
 type novidadesProps = {
@@ -36,12 +37,13 @@ export default function Novidades() {
     return (
         <div className={styles.productCardNovidade}>
           {novidades.map((produtos: novidadesProps) => {
-            return  <div key={produtos.id} className={styles.produtos}>
+            return <Link href={`/produtosdois/${produtos.id}`}  key={produtos.id} className={styles.link}>  <div key={produtos.id} className={styles.produtos}>
             <img src={produtos.thumbnail} alt={produtos.title} width={110} className={styles.imagemproduto} />
             <p className={styles.titleproduct}>{produtos.title}</p>
             <p className={styles.price}>${produtos.price}</p>
-            <p><Star className={styles.starProduct} /><Star className={styles.starProduct}/><Star className={styles.starProduct}/><Star className={styles.starProduct}/>{produtos.rating}</p>
+            <p className={styles.rating}><Star className={styles.starProduct} /><Star className={styles.starProduct}/><Star className={styles.starProduct}/><Star className={styles.starProduct}/>{produtos.rating}</p>
           </div>
+          </Link>
           }
           )}
         </div>

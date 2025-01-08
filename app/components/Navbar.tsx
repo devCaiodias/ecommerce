@@ -16,6 +16,7 @@ export default function Navbar() {
                 </nav>
                 <div className={styles.carrinho}>
                     <Link className={styles.carrinholink} href='../pages/Cart'><ShoppingBasket size={30} /></Link>
+                    <span className={styles.cart_status}>1</span>
                 </div>
             </div>
         </>
